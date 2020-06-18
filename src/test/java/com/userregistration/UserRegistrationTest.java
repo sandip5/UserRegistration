@@ -154,4 +154,59 @@ public class UserRegistrationTest {
         boolean result = validator.checkMobileNumber("91 1&34567890");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenPassword_whenLong_shouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("Aa!a9dhBj7cb");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPassword_whenShort_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("jn2J@4");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPassword_whenAtleastOneUppercase_shouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("saa^RjmHn6rf");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPassword_whenNoUppercase_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("jn#hufgik4");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPassword_whenAtleastOneNumericValue_shouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("khws3sV!G7Fc");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPassword_whenNoNumericValue_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("khws%sVUJGFc");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPassword_whenAtleastOneSpecialCharacter_shouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("Lg5@jgc68UG6");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPassword_whenNoSpecialCharacter_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkPassword("Lg5jgc68UG6");
+        Assert.assertFalse(result);
+    }
 }
