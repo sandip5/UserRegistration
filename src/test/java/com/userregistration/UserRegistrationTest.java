@@ -127,4 +127,31 @@ public class UserRegistrationTest {
         System.out.println("email id is : " + email);
         Assert.assertEquals(expectedResult, validator.checkEmailId(email));
     }
+    @Test
+    public void givenMobileNumber_whenProper_shouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkMobileNumber("91 1234567890");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenMobileNumber_whenNoSpace_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkMobileNumber("911234567890");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenMobileNumber_whenContainCharacter_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkMobileNumber("91 12a457890");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenMobileNumber_whenContainSpecialCharacter_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkMobileNumber("91 1&34567890");
+        Assert.assertFalse(result);
+    }
 }
