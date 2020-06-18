@@ -38,4 +38,38 @@ public class UserRegistrationTest {
         boolean result = validator.checkFirstName("Sandip#");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenLastName_whenProper_shouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkLastName("Singh");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenLastName_whenShort_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkLastName("Si");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastName_whenNoUpperCase_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkLastName("singh");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastName_whenContainsNumeric_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkLastName("Singh5");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastName_whenContainsSpecialChar_shouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.checkLastName("Singh#");
+        Assert.assertFalse(result);
+    }
 }
