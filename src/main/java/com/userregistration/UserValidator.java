@@ -9,7 +9,7 @@ public class UserValidator {
     public static final String PASSWORD_PATTERN = "(?=.*[A-Z])(?=.*[^0-9a-zA-Z])(?=.*[0-9]).{8,}";
 
     /**
-     *
+     *Method For Validating First Name
      * @param firstName
      * @return
      */
@@ -19,7 +19,7 @@ public class UserValidator {
     }
 
     /**
-     *
+     *Method For Validating Last Name
      * @param lastName
      * @return
      */
@@ -29,7 +29,7 @@ public class UserValidator {
     }
 
     /**
-     *
+     *Method For Validating Email Id
      * @param emailId
      * @return
      */
@@ -39,7 +39,7 @@ public class UserValidator {
     }
 
     /**
-     *
+     *Method For Validating Mobile Number
      * @param mobileNumber
      * @return
      */
@@ -49,7 +49,7 @@ public class UserValidator {
     }
 
     /**
-     *
+     *Method For Validating Password
      * @param password
      * @return
      */
