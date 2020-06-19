@@ -27,71 +27,51 @@ public class UserRegistrationTest {
 
     @Test
     public void givenFirstName_whenProper_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkFirstName("Sandip");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkFirstName("Sandip"));
     }
 
     @Test
-    public void givenFirstName_whenShort_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkFirstName("Sa");
-        Assert.assertFalse(result);
+    public void givenFirstName_whenShort_shouldReturnFalse() {;
+        Assert.assertFalse(validator.checkFirstName("Sa"));
     }
 
     @Test
     public void givenFirstName_whenNoUpperCase_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkFirstName("sandip");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkFirstName("sandip"));
     }
 
     @Test
     public void givenFirstName_whenContainsNumeric_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkFirstName("Sandip5");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkFirstName("Sandip5"));
     }
 
     @Test
     public void givenFirstName_whenContainsSpecialChar_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkFirstName("Sandip#");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkFirstName("Sandip#"));
     }
     @Test
     public void givenLastName_whenProper_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkLastName("Singh");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkLastName("Singh"));
     }
 
     @Test
     public void givenLastName_whenShort_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkLastName("Si");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkLastName("Si"));
     }
 
     @Test
     public void givenLastName_whenNoUpperCase_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkLastName("singh");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkLastName("singh"));
     }
 
     @Test
     public void givenLastName_whenContainsNumeric_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkLastName("Singh5");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkLastName("Singh5"));
     }
 
     @Test
     public void givenLastName_whenContainsSpecialChar_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkLastName("Singh#");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkLastName("Singh#"));
     }
 
     @Parameterized.Parameters
@@ -129,84 +109,60 @@ public class UserRegistrationTest {
     }
     @Test
     public void givenMobileNumber_whenProper_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkMobileNumber("91 1234567890");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkMobileNumber("91 1234567890"));
     }
 
     @Test
     public void givenMobileNumber_whenNoSpace_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkMobileNumber("911234567890");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkMobileNumber("911234567890"));
     }
 
     @Test
     public void givenMobileNumber_whenContainCharacter_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkMobileNumber("91 12a457890");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkMobileNumber("91 12a457890"));
     }
 
     @Test
     public void givenMobileNumber_whenContainSpecialCharacter_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkMobileNumber("91 1&34567890");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkMobileNumber("91 1&34567890"));
     }
     @Test
     public void givenPassword_whenLong_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("Aa!a9dhBj7cb");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkPassword("Aa!a9dhBj7cb"));
     }
 
     @Test
     public void givenPassword_whenShort_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("jn2J@4");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkPassword("jn2J@4"));
     }
 
     @Test
     public void givenPassword_whenAtleastOneUppercase_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("saa^RjmHn6rf");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkPassword("saa^RjmHn6rf"));
     }
 
     @Test
     public void givenPassword_whenNoUppercase_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("jn#hufgik4");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkPassword("jn#hufgik4"));
     }
 
     @Test
     public void givenPassword_whenAtleastOneNumericValue_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("khws3sV!G7Fc");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkPassword("khws3sV!G7Fc"));
     }
 
     @Test
     public void givenPassword_whenNoNumericValue_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("khws%sVUJGFc");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkPassword("khws%sVUJGFc"));
     }
 
     @Test
     public void givenPassword_whenAtleastOneSpecialCharacter_shouldReturnTrue() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("Lg5@jgc68UG6");
-        Assert.assertTrue(result);
+        Assert.assertTrue(validator.checkPassword("Lg5@jgc68UG6"));
     }
 
     @Test
     public void givenPassword_whenNoSpecialCharacter_shouldReturnFalse() {
-        UserValidator validator = new UserValidator();
-        boolean result = validator.checkPassword("Lg5jgc68UG6");
-        Assert.assertFalse(result);
+        Assert.assertFalse(validator.checkPassword("Lg5jgc68UG6"));
     }
 }
